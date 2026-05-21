@@ -45,8 +45,8 @@
 <li onclick="mostrarSeccion('home')">Home</li>
 <li onclick="mostrarSeccion('servicios')">Servicios</li>
 <li onclick="mostrarSeccion('proyectos')">Proyectos Destacados</li>
-<li onclick="mostrarSeccion('resultados')">Resultados</li>
-<li onclick="mostrarSeccion('marcas')">Marcas</li>
+<li onclick="mostrarSeccion('promociones')">promociones</li>
+<!--<li onclick="mostrarSeccion('marcas')">Marcas</li>-->
 <li onclick="mostrarSeccion('contacto')">Contacto</li>
 
 <li class="search-icon" onclick="toggleSearch()">
@@ -304,18 +304,18 @@ Gestión completa de Redes Sociales asi como la logística detras de produccione
 
 <article class="proyecto-card">
 
-<img src="https://picsum.photos/800/500?event" alt="Miss Huanuco">
+<img src="imagen/movistar01.jpg" alt="Miss Huanuco">
 
 <div class="proyecto-info">
 
-<h3>Producción Audiovisual – Miss Huánuco 2024</h3>
+<h3>Producción Audiovisual – Movistar 2025</h3>
 
 <p>
-Cobertura audiovisual completa del certamen <strong>Miss Huánuco 2024</strong>, 
-incluyendo producción de contenido promocional, registro del evento en vivo 
-y material visual para redes sociales. El proyecto incluyó grabación multicámara,
-dirección creativa y edición cinematográfica para resaltar la identidad cultural 
-y el talento regional.
+Cobertura audiovisual completa de la promoción <strong>Promoción Movistar 2025</strong>, 
+Se hizo producción de contenido promocional, registro de la marca y material visual 
+para redes sociales. El proyecto incluyó grabación multicámara,
+dirección creativa y edición cinematográfica para resaltar la identidad de la marca
+y calidad detras de proporcion aspecto del flyer.
 </p>
 
 </div>
@@ -327,17 +327,18 @@ y el talento regional.
 
 <article class="proyecto-card">
 
-<img src="https://picsum.photos/800/500?concert" alt="Evento Artistico">
+<img src="imagen/perfume01.jpg" alt="Evento Artistico">
 
 <div class="proyecto-info">
 
-<h3>Presentación Artística – Festival Cultural Huánuco</h3>
+<h3>Presentación Artística – Perfumeria especializada</h3>
 
 <p>
-Producción técnica y registro audiovisual de una presentación artística dentro 
-del Festival Cultural de Huánuco. El proyecto incluyó dirección de escenario, 
+Producción técnica y registro audiovisual de una presentación artística de la perfumeria en
+Lima. El proyecto incluyó dirección de escenario, 
 iluminación, coordinación logística y generación de contenido multimedia para 
-promoción del evento en plataformas digitales.
+promoción de la marca en plataformas digitales asi como uso de planos y manejo 
+avanzado de cámara.
 </p>
 
 </div>
@@ -349,7 +350,7 @@ promoción del evento en plataformas digitales.
 
 <article class="proyecto-card">
 
-<img src="https://picsum.photos/800/500?camera" alt="Produccion Audiovisual">
+<img src="imagen/aurastore01.png" alt="Produccion Audiovisual">
 
 <div class="proyecto-info">
 
@@ -363,7 +364,7 @@ mediante contenido visual profesional optimizado para redes sociales.
 </p>
 
 </div>
-
+<h2>PROXIMAMENTE..... </h2>
 </article>
 
 
@@ -373,101 +374,394 @@ mediante contenido visual profesional optimizado para redes sociales.
 
 
 <!-- ===================================================== -->
-<!-- RESULTADOS -->
+<!-- PROMOCIONES -->
 <!-- ===================================================== -->
 
-<section id="resultados" class="seccion">
+<section id="promociones" class="seccion">
 
-<h2 class="titulo-seccion">Resultados</h2>
+<h2 class="titulo-seccion">Nuestros Planes</h2>
 
-<div class="resultados-container">
+<p class="promo-subtitulo">Elige el plan ideal para tu marca y empieza a construir presencia real.</p>
+
+<!-- GRID DE 4 PLANES -->
+<div class="planes-grid">
+
+  <!-- PLAN 1: CHISPA -->
+  <div class="plan-card" onclick="abrirPlan('plan-chispa')">
+    <div class="plan-imagen">
+      <img src="https://picsum.photos/600/400?spark" alt="Plan Chispa">
+    </div>
+    <div class="plan-header plan-chispa-color">
+      <span class="plan-etiqueta">Emprendedor</span>
+      <h3 class="plan-nombre">Chispa</h3>
+      <p class="plan-precio">S/ 300 <span>/ mes</span></p>
+    </div>
+    <div class="plan-preview">
+      <p>Para esa generación de emprendimiento que da el primer paso digital.</p>
+    </div>
+    <button class="btn-ver-plan">Ver plan →</button>
+  </div>
+
+  <!-- PLAN 2: YUNQUE -->
+  <div class="plan-card" onclick="abrirPlan('plan-yunque')">
+    <div class="plan-imagen">
+      <img src="https://picsum.photos/600/400?anvil" alt="Plan Yunque">
+    </div>
+    <div class="plan-header plan-yunque-color">
+      <span class="plan-etiqueta">Identidad</span>
+      <h3 class="plan-nombre">Yunque</h3>
+      <p class="plan-precio">S/ 500 <span>/ mes</span></p>
+    </div>
+    <div class="plan-preview">
+      <p>Para forjar una identidad digital sólida con presencia constante.</p>
+    </div>
+    <button class="btn-ver-plan">Ver plan →</button>
+  </div>
+
+  <!-- PLAN 3: FORJADO -->
+  <div class="plan-card destacado" onclick="abrirPlan('plan-forjado')">
+    <div class="plan-imagen">
+      <img src="https://picsum.photos/600/400?forge" alt="Plan Forjado">
+    </div>
+    <div class="plan-header plan-forjado-color">
+      <span class="plan-badge-popular">MÁS POPULAR</span>
+      <span class="plan-etiqueta">Refinamiento</span>
+      <h3 class="plan-nombre">Forjado</h3>
+      <p class="plan-precio">S/ 900 <span>/ mes</span></p>
+    </div>
+    <div class="plan-preview">
+      <p>Para marcas con identidad sólida que buscan refinamiento y perfección.</p>
+    </div>
+    <button class="btn-ver-plan">Ver plan →</button>
+  </div>
+
+  <!-- PLAN 4: FORGE -->
+  <div class="plan-card" onclick="abrirPlan('plan-forge')">
+    <div class="plan-imagen">
+      <img src="https://picsum.photos/600/400?premium" alt="Plan Forge">
+    </div>
+    <div class="plan-header plan-forge-color">
+      <span class="plan-etiqueta">Premium</span>
+      <h3 class="plan-nombre">Forge</h3>
+      <p class="plan-precio">S/ 1299 <span>/ mes</span></p>
+    </div>
+    <div class="plan-preview">
+      <p>La marca misma. Creación de una marca sólida de alto valor.</p>
+    </div>
+    <button class="btn-ver-plan">Ver plan →</button>
+  </div>
+
+</div><!-- fin planes-grid -->
 
 
-<!-- RESULTADO 1 -->
+<!-- ============================================= -->
+<!-- DETALLE PLAN: CHISPA -->
+<!-- ============================================= -->
+<div id="plan-chispa" class="plan-detalle">
 
-<article class="resultado-card">
+  <div class="plan-detalle-volver" onclick="volverPlanes()">← Volver a Planes</div>
 
-<img src="https://picsum.photos/900/550?business" alt="Café Huánuco">
+  <div class="plan-detalle-hero plan-chispa-color">
+    <div class="plan-detalle-texto">
+      <span class="plan-etiqueta">Emprendedor</span>
+      <h2>Chispa</h2>
+      <p class="plan-detalle-precio">S/ 300 <span>/ mes</span></p>
+      <p class="plan-detalle-desc">
+        Para esa generación de emprendimiento que da el primer gran paso hacia el mundo digital.
+        Ideal para marcas que están naciendo y necesitan empezar a generar contenido de forma
+        profesional y consistente sin una inversión mayor.
+      </p>
+    </div>
+    <div class="plan-detalle-img">
+      <img src="https://picsum.photos/700/500?spark2" alt="Plan Chispa">
+    </div>
+  </div>
 
-<div class="resultado-info">
+  <div class="plan-detalle-cuerpo">
 
-<h3>Café Monte Alto – Crecimiento en redes</h3>
+    <div class="plan-detalle-info">
+      <h4>¿Para quién es?</h4>
+      <p>Emprendedores, negocios nuevos o marcas personales que buscan generar presencia digital
+      con contenido visual profesional sin administración activa de redes.</p>
 
-<p>
-Desarrollamos una estrategia audiovisual para la cafetería local 
-<strong>Café Monte Alto</strong> en Huánuco. La producción de contenido 
-para redes sociales permitió aumentar su visibilidad digital y mejorar 
-la interacción con clientes locales.
-</p>
+      <h4>¿Qué incluye?</h4>
+      <p>Producción de contenido básica enfocada en calidad visual, sin gestión de comunidad.
+      El contenido es entregado listo para que el cliente lo publique a su ritmo.</p>
+    </div>
 
-<ul>
-<li>+180% interacción en Instagram</li>
-<li>+95% crecimiento de seguidores</li>
-<li>Mayor afluencia de clientes al local</li>
-</ul>
+    <!-- TABLA DE CARACTERÍSTICAS -->
+    <div class="plan-tabla-wrap">
+      <h4>Características del plan</h4>
+      <table class="plan-tabla">
+        <thead>
+          <tr>
+            <th>Característica</th>
+            <th>Chispa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Publicaciones por semana</td><td>3 (2 flyers + 1 video)</td></tr>
+          <tr><td>Manejo de redes</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Contenido creativo</td><td>Básico</td></tr>
+          <tr><td>Implementación de IA</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Implementación de guion</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Revisiones por pieza</td><td>1 revisión</td></tr>
+          <tr><td>Calendario de contenido</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Cámara</td><td>iPhone (configurado)</td></tr>
+          <tr><td>Gadgets adicionales</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Drone</td><td class="no">✗ No incluido</td></tr>
+        </tbody>
+      </table>
+    </div>
 
+  </div><!-- fin plan-detalle-cuerpo -->
+
+  <!-- BOTÓN COMPARAR -->
+  <div class="comparar-wrap">
+    <button class="btn-comparar" onclick="abrirComparar('chispa')">
+      ⇄ Comparar con otro plan
+    </button>
+  </div>
+
+</div><!-- fin plan-chispa -->
+
+
+<!-- ============================================= -->
+<!-- DETALLE PLAN: YUNQUE -->
+<!-- ============================================= -->
+<div id="plan-yunque" class="plan-detalle">
+
+  <div class="plan-detalle-volver" onclick="volverPlanes()">← Volver a Planes</div>
+
+  <div class="plan-detalle-hero plan-yunque-color">
+    <div class="plan-detalle-texto">
+      <span class="plan-etiqueta">Identidad</span>
+      <h2>Yunque</h2>
+      <p class="plan-detalle-precio">S/ 500 <span>/ mes</span></p>
+      <p class="plan-detalle-desc">
+        Para forjar una identidad de marca sólida. Pensado para negocios que ya tienen
+        presencia pero necesitan elevar su imagen con producción más constante
+        y comenzar a gestionar sus redes de forma profesional.
+      </p>
+    </div>
+    <div class="plan-detalle-img">
+      <img src="https://picsum.photos/700/500?anvil2" alt="Plan Yunque">
+    </div>
+  </div>
+
+  <div class="plan-detalle-cuerpo">
+
+    <div class="plan-detalle-info">
+      <h4>¿Para quién es?</h4>
+      <p>Marcas pequeñas o medianas en crecimiento que necesitan contenido consistente
+      y gestión básica de su presencia digital. Ideal para el segundo paso de una marca.</p>
+
+      <h4>¿Qué incluye?</h4>
+      <p>Mayor volumen de contenido semanal, gestión básica de redes sociales y
+      el respaldo de herramientas de IA para optimizar el proceso creativo.</p>
+    </div>
+
+    <div class="plan-tabla-wrap">
+      <h4>Características del plan</h4>
+      <table class="plan-tabla">
+        <thead>
+          <tr>
+            <th>Característica</th>
+            <th>Yunque</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Publicaciones por semana</td><td>4 (2 flyers + 2 videos)</td></tr>
+          <tr><td>Manejo de redes</td><td class="si">✓ Básico</td></tr>
+          <tr><td>Contenido creativo</td><td>Medio</td></tr>
+          <tr><td>Implementación de IA</td><td class="si">✓ Básica</td></tr>
+          <tr><td>Implementación de guion</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Revisiones por pieza</td><td>1 revisión</td></tr>
+          <tr><td>Calendario de contenido</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Cámara</td><td>iPhone especializado</td></tr>
+          <tr><td>Gadgets adicionales</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Drone</td><td class="no">✗ No incluido</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="comparar-wrap">
+    <button class="btn-comparar" onclick="abrirComparar('yunque')">
+      ⇄ Comparar con otro plan
+    </button>
+  </div>
+
+</div><!-- fin plan-yunque -->
+
+
+<!-- ============================================= -->
+<!-- DETALLE PLAN: FORJADO -->
+<!-- ============================================= -->
+<div id="plan-forjado" class="plan-detalle">
+
+  <div class="plan-detalle-volver" onclick="volverPlanes()">← Volver a Planes</div>
+
+  <div class="plan-detalle-hero plan-forjado-color">
+    <div class="plan-detalle-texto">
+      <span class="plan-etiqueta">Refinamiento</span>
+      <h2>Forjado</h2>
+      <p class="plan-detalle-precio">S/ 900 <span>/ mes</span></p>
+      <p class="plan-detalle-desc">
+        Con una identidad sólida, se busca el refinamiento y la perfección de la marca.
+        Producción profesional con cámara filmmaker, guiones elaborados y un calendario
+        estratégico para dominar el posicionamiento digital.
+      </p>
+    </div>
+    <div class="plan-detalle-img">
+      <img src="https://picsum.photos/700/500?forge2" alt="Plan Forjado">
+    </div>
+  </div>
+
+  <div class="plan-detalle-cuerpo">
+
+    <div class="plan-detalle-info">
+      <h4>¿Para quién es?</h4>
+      <p>Marcas establecidas con identidad definida que buscan llevar su contenido
+      al siguiente nivel con producción cinematográfica y estrategia integral de redes.</p>
+
+      <h4>¿Qué incluye?</h4>
+      <p>Alta frecuencia de contenido, gestión completa de redes, guiones profesionales,
+      IA media aplicada al proceso creativo y cámara filmmaker de uso limitado.</p>
+    </div>
+
+    <div class="plan-tabla-wrap">
+      <h4>Características del plan</h4>
+      <table class="plan-tabla">
+        <thead>
+          <tr>
+            <th>Característica</th>
+            <th>Forjado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Publicaciones por semana</td><td>7 (4 flyers + 3 videos + posteo básico)</td></tr>
+          <tr><td>Manejo de redes</td><td class="si">✓ Completo</td></tr>
+          <tr><td>Contenido creativo</td><td>Alto</td></tr>
+          <tr><td>Implementación de IA</td><td class="si">✓ Media</td></tr>
+          <tr><td>Implementación de guion</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Revisiones por pieza</td><td>2 revisiones</td></tr>
+          <tr><td>Calendario de contenido</td><td class="si">✓ Semanal</td></tr>
+          <tr><td>Cámara</td><td>Filmmaker profesional (uso limitado)</td></tr>
+          <tr><td>Gadgets adicionales</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Drone</td><td class="no">✗ No incluido</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="comparar-wrap">
+    <button class="btn-comparar" onclick="abrirComparar('forjado')">
+      ⇄ Comparar con otro plan
+    </button>
+  </div>
+
+</div><!-- fin plan-forjado -->
+
+
+<!-- ============================================= -->
+<!-- DETALLE PLAN: FORGE -->
+<!-- ============================================= -->
+<div id="plan-forge" class="plan-detalle">
+
+  <div class="plan-detalle-volver" onclick="volverPlanes()">← Volver a Planes</div>
+
+  <div class="plan-detalle-hero plan-forge-color">
+    <div class="plan-detalle-texto">
+      <span class="plan-etiqueta">Premium</span>
+      <h2>Forge</h2>
+      <p class="plan-detalle-precio">S/ 1299 <span>/ mes</span></p>
+      <p class="plan-detalle-desc">
+        La marca misma. La creación de una marca sólida, completa y de alto valor.
+        El paquete más completo con producción cinematográfica total, drone, IA avanzada
+        y un plan mensual de trabajo estratégico personalizado.
+      </p>
+    </div>
+    <div class="plan-detalle-img">
+      <img src="https://picsum.photos/700/500?premium2" alt="Plan Forge">
+    </div>
+  </div>
+
+  <div class="plan-detalle-cuerpo">
+
+    <div class="plan-detalle-info">
+      <h4>¿Para quién es?</h4>
+      <p>Marcas ambiciosas que quieren posicionarse como líderes en su mercado local
+      con la producción más completa, estratégica y de mayor impacto visual disponible.</p>
+
+      <h4>¿Qué incluye?</h4>
+      <p>El máximo nivel de producción: 10 publicaciones semanales a elección del cliente,
+      IA avanzada, drone, plan mensual y sujeto a peticiones extra personalizadas.</p>
+    </div>
+
+    <div class="plan-tabla-wrap">
+      <h4>Características del plan</h4>
+      <table class="plan-tabla">
+        <thead>
+          <tr>
+            <th>Característica</th>
+            <th>Forge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Publicaciones por semana</td><td>10 (flyers/videos a elección del cliente)</td></tr>
+          <tr><td>Manejo de redes</td><td class="si">✓ Completo</td></tr>
+          <tr><td>Contenido creativo</td><td>Alto valor</td></tr>
+          <tr><td>Implementación de IA</td><td class="si">✓ Avanzada</td></tr>
+          <tr><td>Implementación de guion</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Revisiones por pieza</td><td>3 revisiones</td></tr>
+          <tr><td>Calendario de contenido</td><td class="si">✓ Mensual + plan de trabajo</td></tr>
+          <tr><td>Cámara</td><td>Filmmaker profesional completo</td></tr>
+          <tr><td>Gadgets adicionales</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Drone</td><td class="si">✓ Incluido</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="comparar-wrap">
+    <button class="btn-comparar" onclick="abrirComparar('forge')">
+      ⇄ Comparar con otro plan
+    </button>
+  </div>
+
+</div><!-- fin plan-forge -->
+
+
+<!-- ============================================= -->
+<!-- MODAL COMPARADOR -->
+<!-- ============================================= -->
+<div id="comparador-overlay" class="comparador-overlay" onclick="cerrarComparador()">
+  <div class="comparador-modal" onclick="event.stopPropagation()">
+
+    <div class="comparador-header">
+      <h3 id="comparador-titulo">Comparar planes</h3>
+      <span class="comparador-cerrar" onclick="cerrarComparador()">✕</span>
+    </div>
+
+    <div id="comparador-selector" class="comparador-selector">
+      <p>Selecciona el plan a comparar:</p>
+      <div id="comparador-opciones" class="comparador-opciones"></div>
+    </div>
+
+    <div id="comparador-tabla-wrap" class="comparador-tabla-wrap" style="display:none;">
+      <table class="plan-tabla comparador-tabla" id="comparador-tabla"></table>
+      <button class="btn-cambiar-plan" onclick="mostrarSelectorComparador()">Cambiar plan de comparación</button>
+    </div>
+
+  </div>
 </div>
 
-</article>
 
-
-<!-- RESULTADO 2 -->
-
-<article class="resultado-card">
-
-<img src="https://picsum.photos/900/550?restaurant" alt="Restaurante Huanuco">
-
-<div class="resultado-info">
-
-<h3>Sabores del Valle – Campaña audiovisual</h3>
-
-<p>
-Producción de videos promocionales para el restaurante 
-<strong>Sabores del Valle</strong> con el objetivo de posicionar 
-su propuesta gastronómica dentro del mercado local.
-</p>
-
-<ul>
-<li>+210% alcance en campañas digitales</li>
-<li>Incremento en reservas de fin de semana</li>
-<li>Mayor posicionamiento de marca en Huánuco</li>
-</ul>
-
-</div>
-
-</article>
-
-
-<!-- RESULTADO 3 -->
-
-<article class="resultado-card">
-
-<img src="https://picsum.photos/900/550?fashion" alt="Boutique Huanuco">
-
-<div class="resultado-info">
-
-<h3>Boutique Andina – Lanzamiento de marca</h3>
-
-<p>
-Producción de fotografía y video para el lanzamiento de la marca 
-<strong>Boutique Andina</strong>. El contenido visual fue utilizado 
-para redes sociales y campañas digitales enfocadas en el público joven.
-</p>
-
-<ul>
-<li>+150% tráfico en redes sociales</li>
-<li>Incremento de ventas en el primer mes</li>
-<li>Mayor reconocimiento de marca local</li>
-</ul>
-
-</div>
-
-</article>
-
-
-</div>
-
-</section>
+</section><!-- fin sección promociones -->
 
 
 

@@ -1573,3 +1573,458 @@ grid-template-columns:1fr;
 }
 
 }
+/* ===================================================== */
+/* PROMOCIONES - PLANES */
+/* ===================================================== */
+
+.promo-subtitulo{
+color:#aaa;
+font-size:18px;
+margin-top:-40px;
+margin-bottom:60px;
+}
+
+/* GRID 4 PLANES */
+.planes-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:24px;
+max-width:1300px;
+margin:auto;
+}
+
+@media(max-width:1100px){
+.planes-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:600px){
+.planes-grid{
+grid-template-columns:1fr;
+}
+}
+
+/* TARJETA DE PLAN */
+.plan-card{
+background:#111;
+border-radius:14px;
+overflow:hidden;
+cursor:pointer;
+transition:transform 0.35s, box-shadow 0.35s;
+border:1px solid rgba(255,255,255,0.06);
+display:flex;
+flex-direction:column;
+}
+
+.plan-card:hover{
+transform:translateY(-8px);
+box-shadow:0 16px 40px rgba(0,0,0,0.6);
+}
+
+.plan-card.destacado{
+border:2px solid #1b2f6b;
+box-shadow:0 0 20px rgba(27,47,107,0.4);
+}
+
+/* imagen en tarjeta */
+.plan-imagen img{
+width:100%;
+height:180px;
+object-fit:cover;
+display:block;
+}
+
+/* header coloreado */
+.plan-header{
+padding:20px 22px 16px;
+}
+
+.plan-chispa-color{ background:linear-gradient(135deg,#0d2244,#1a3a6b); }
+.plan-yunque-color{ background:linear-gradient(135deg,#0d3a2e,#1a6b4a); }
+.plan-forjado-color{ background:linear-gradient(135deg,#2d1a00,#6b3d0d); }
+.plan-forge-color{ background:linear-gradient(135deg,#2a0d44,#5c1a8a); }
+
+.plan-etiqueta{
+font-size:11px;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+color:rgba(255,255,255,0.55);
+display:block;
+margin-bottom:6px;
+}
+
+.plan-nombre{
+font-family:'Playfair Display', serif;
+font-size:26px;
+font-weight:700;
+color:#fff;
+margin:0 0 8px;
+}
+
+.plan-precio{
+font-size:22px;
+font-weight:700;
+color:#fff;
+margin:0;
+}
+
+.plan-precio span{
+font-size:13px;
+font-weight:400;
+color:rgba(255,255,255,0.6);
+}
+
+.plan-badge-popular{
+display:inline-block;
+background:#e89b1a;
+color:#fff;
+font-size:10px;
+font-weight:700;
+letter-spacing:1.5px;
+padding:3px 10px;
+border-radius:20px;
+margin-bottom:8px;
+}
+
+/* preview texto */
+.plan-preview{
+padding:16px 22px;
+color:#aaa;
+font-size:14px;
+line-height:1.6;
+flex:1;
+}
+
+/* boton ver plan */
+.btn-ver-plan{
+margin:0 22px 20px;
+background:transparent;
+border:1px solid rgba(255,255,255,0.15);
+color:#fff;
+padding:10px 0;
+border-radius:30px;
+font-size:14px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+width:calc(100% - 44px);
+}
+
+.btn-ver-plan:hover{
+background:rgba(255,255,255,0.08);
+border-color:rgba(255,255,255,0.35);
+}
+
+/* ===================================================== */
+/* DETALLE DE PLAN */
+/* ===================================================== */
+
+.plan-detalle{
+display:none;
+animation:fade 0.4s ease;
+}
+
+.plan-detalle-volver{
+cursor:pointer;
+font-size:16px;
+color:#aaa;
+margin-bottom:40px;
+display:inline-block;
+transition:0.3s;
+}
+
+.plan-detalle-volver:hover{
+color:#fff;
+transform:translateX(-5px);
+}
+
+/* hero de detalle */
+.plan-detalle-hero{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+border-radius:16px;
+padding:50px;
+margin-bottom:60px;
+}
+
+.plan-detalle-texto h2{
+font-family:'Playfair Display', serif;
+font-size:54px;
+color:#fff;
+margin:8px 0 16px;
+}
+
+.plan-detalle-precio{
+font-size:32px;
+font-weight:700;
+color:#fff;
+margin:0 0 20px;
+}
+
+.plan-detalle-precio span{
+font-size:16px;
+font-weight:400;
+color:rgba(255,255,255,0.6);
+}
+
+.plan-detalle-desc{
+color:rgba(255,255,255,0.75);
+font-size:16px;
+line-height:1.8;
+margin:0;
+}
+
+.plan-detalle-img img{
+width:100%;
+border-radius:12px;
+object-fit:cover;
+height:340px;
+}
+
+/* cuerpo del detalle */
+.plan-detalle-cuerpo{
+display:grid;
+grid-template-columns:1fr 1.6fr;
+gap:50px;
+margin-bottom:50px;
+}
+
+.plan-detalle-info h4{
+color:#1b2f6b;
+font-size:18px;
+margin:0 0 10px;
+}
+
+.plan-detalle-info p{
+color:#ccc;
+line-height:1.7;
+margin-bottom:30px;
+font-size:15px;
+}
+
+/* TABLA DE PLAN */
+.plan-tabla-wrap h4{
+color:#1b2f6b;
+font-size:18px;
+margin:0 0 16px;
+}
+
+.plan-tabla{
+width:100%;
+border-collapse:collapse;
+font-size:14px;
+}
+
+.plan-tabla th{
+background:#1a1a1a;
+color:#aaa;
+font-weight:600;
+padding:12px 16px;
+text-align:left;
+font-size:13px;
+letter-spacing:0.5px;
+}
+
+.plan-tabla td{
+padding:11px 16px;
+border-bottom:1px solid rgba(255,255,255,0.06);
+color:#ddd;
+}
+
+.plan-tabla tr:last-child td{
+border-bottom:none;
+}
+
+.plan-tabla tr:hover td{
+background:rgba(255,255,255,0.03);
+}
+
+.plan-tabla td.si{
+color:#4ade80;
+font-weight:600;
+}
+
+.plan-tabla td.no{
+color:#555;
+}
+
+/* BOTÓN COMPARAR */
+.comparar-wrap{
+text-align:center;
+padding:30px 0 10px;
+}
+
+.btn-comparar{
+background:transparent;
+border:1px solid #1b2f6b;
+color:#4a6fd4;
+padding:14px 36px;
+border-radius:30px;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+letter-spacing:0.5px;
+}
+
+.btn-comparar:hover{
+background:rgba(27,47,107,0.2);
+box-shadow:0 0 20px rgba(27,47,107,0.4);
+transform:scale(1.03);
+}
+
+/* ===================================================== */
+/* MODAL COMPARADOR */
+/* ===================================================== */
+
+.comparador-overlay{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.82);
+z-index:3000;
+align-items:center;
+justify-content:center;
+}
+
+.comparador-overlay.activo{
+display:flex;
+}
+
+.comparador-modal{
+background:#161616;
+border:1px solid rgba(255,255,255,0.1);
+border-radius:16px;
+width:90%;
+max-width:800px;
+max-height:85vh;
+overflow-y:auto;
+padding:36px 40px;
+position:relative;
+animation:fade 0.35s ease;
+}
+
+.comparador-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:28px;
+}
+
+.comparador-header h3{
+font-family:'Playfair Display', serif;
+font-size:26px;
+color:#fff;
+margin:0;
+}
+
+.comparador-cerrar{
+font-size:22px;
+color:#666;
+cursor:pointer;
+transition:0.2s;
+}
+
+.comparador-cerrar:hover{
+color:#fff;
+}
+
+.comparador-selector p{
+color:#aaa;
+margin-bottom:16px;
+}
+
+.comparador-opciones{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.comparador-opciones button{
+background:#111;
+border:1px solid rgba(255,255,255,0.12);
+color:#ddd;
+padding:12px 24px;
+border-radius:30px;
+cursor:pointer;
+font-size:14px;
+font-weight:600;
+transition:0.3s;
+}
+
+.comparador-opciones button:hover{
+border-color:#1b2f6b;
+color:#4a6fd4;
+background:rgba(27,47,107,0.15);
+}
+
+/* tabla comparativa */
+.comparador-tabla{
+width:100%;
+}
+
+.comparador-tabla th:not(:first-child){
+font-size:15px;
+font-weight:700;
+color:#fff;
+text-align:center;
+padding:14px 12px;
+}
+
+.comparador-tabla td{
+text-align:center;
+font-size:13px;
+}
+
+.comparador-tabla td:first-child{
+text-align:left;
+color:#aaa;
+}
+
+.comparador-tabla-wrap{
+margin-top:8px;
+}
+
+.btn-cambiar-plan{
+margin-top:24px;
+background:transparent;
+border:1px solid rgba(255,255,255,0.15);
+color:#aaa;
+padding:10px 24px;
+border-radius:20px;
+cursor:pointer;
+font-size:13px;
+transition:0.3s;
+}
+
+.btn-cambiar-plan:hover{
+color:#fff;
+border-color:#fff;
+}
+
+/* responsive detalle */
+@media(max-width:768px){
+
+.plan-detalle-hero{
+grid-template-columns:1fr;
+padding:30px;
+gap:30px;
+}
+
+.plan-detalle-texto h2{
+font-size:38px;
+}
+
+.plan-detalle-cuerpo{
+grid-template-columns:1fr;
+}
+
+.comparador-modal{
+padding:24px 20px;
+}
+
+}
