@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pixel Agency</title>
+<title>FORGE publicidad y sistemas</title>
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -45,7 +45,7 @@
 <li onclick="mostrarSeccion('home')">Home</li>
 <li onclick="mostrarSeccion('servicios')">Servicios</li>
 <li onclick="mostrarSeccion('proyectos')">Proyectos Destacados</li>
-<li onclick="mostrarSeccion('promociones')">promociones</li>
+<li onclick="mostrarSeccion('promociones')">Promociones</li>
 <!--<li onclick="mostrarSeccion('marcas')">Marcas</li>-->
 <li onclick="mostrarSeccion('contacto')">Contacto</li>
 
@@ -108,21 +108,21 @@ para elevar marcas que buscan destacar, no competir por precio.
 <div class="info-container">
 
 <div class="card">
-<img src="https://picsum.photos/400/250?1">
+<img src="imagen/audiovisual.jpeg">
 <h3>Producción Profesional</h3>
 <p>Servicios audiovisuales para marcas y eventos.</p>
 </div>
 
 <div class="card">
-<img src="https://picsum.photos/400/250?2">
+<img src="imagen/redes.jpeg">
 <h3>Gestión</h3>
 <p>Gestión de redes sociales .</p>
 </div>
 
 <div class="card">
-<img src="https://picsum.photos/400/250?3">
-<h3>Streaming</h3>
-<p>Transmisión en vivo multicámara profesional.</p>
+<img src="imagen/informatica.jpeg">
+<h3>Programación</h3>
+<p>Webs y sistematización del negocio.</p>
 </div>
 
 </div>
@@ -373,14 +373,63 @@ mediante contenido visual profesional optimizado para redes sociales.
 </section>
 
 
-<!-- ===================================================== -->
-<!-- PROMOCIONES -->
-<!-- ===================================================== -->
-
 <section id="promociones" class="seccion">
 
 <h2 class="titulo-seccion">Nuestros Planes</h2>
 
+<!-- ============================================= -->
+<!-- SELECTOR PRINCIPAL -->
+<!-- ============================================= -->
+<div id="promo-selector" class="promo-selector">
+
+  <div class="promo-selector-btn" onclick="abrirCategoria('audiovisual')"
+    style="background-image:url(imagen/audiovisual.jpeg)">
+    <div class="promo-selector-overlay"></div>
+    <div class="promo-selector-texto">
+      <span class="promo-selector-tag">Agencia</span>
+      <h3>Contenido Audiovisual</h3>
+      <p>Videos, flyers, redes sociales y estrategia de marca.</p>
+    </div>
+  </div>
+
+  <div class="promo-selector-btn" onclick="abrirCategoria('web')"
+    style="background-image:url(imagen/informatica.jpeg)">
+    <div class="promo-selector-overlay"></div>
+    <div class="promo-selector-texto">
+      <span class="promo-selector-tag">Desarrollo</span>
+      <h3>Webs / Sistemas / Apps</h3>
+      <p>Landing pages, sistemas, e-commerce y ecosistemas digitales.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTÓN EXTRA: OTRA IDEA -->
+<div class="promo-otra-idea">
+  <button onclick="abrirOtraIdea()">
+    <i class="fa-solid fa-lightbulb"></i> ¿Tienes otra idea?
+  </button>
+</div>
+
+<!-- MODAL OTRA IDEA -->
+<div id="modal-otra-idea" class="modal-otraidea-overlay" onclick="cerrarOtraIdea()">
+  <div class="modal-otraidea" onclick="event.stopPropagation()">
+    <span class="modal-otraidea-cerrar" onclick="cerrarOtraIdea()">✕</span>
+    <div class="modal-otraidea-icono"><i class="fa-solid fa-comments"></i></div>
+    <h3>¡Conversemos tu idea!</h3>
+    <p>Cada proyecto es único. Escríbenos y construimos juntos la solución perfecta para tu negocio.</p>
+    <a href="https://wa.me/qr/ALTUIET6OBIGG1" target="_blank" class="modal-otraidea-btn">
+      <i class="fa-brands fa-whatsapp"></i> Escríbenos por WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- ============================================= -->
+<!-- CATEGORÍA: AUDIOVISUAL -->
+<!-- ============================================= -->
+<div id="cat-audiovisual" class="promo-categoria">
+
+<div class="promo-cat-volver" onclick="volverSelector()">← Volver</div>
 <p class="promo-subtitulo">Elige el plan ideal para tu marca y empieza a construir presencia real.</p>
 
 <!-- GRID DE 4 PLANES -->
@@ -389,7 +438,7 @@ mediante contenido visual profesional optimizado para redes sociales.
   <!-- PLAN 1: CHISPA -->
   <div class="plan-card" onclick="abrirPlan('plan-chispa')">
     <div class="plan-imagen">
-      <img src="https://picsum.photos/600/400?spark" alt="Plan Chispa">
+      <img src="imagen/chispa.jpeg" alt="Plan Chispa">
     </div>
     <div class="plan-header plan-chispa-color">
       <span class="plan-etiqueta">Emprendedor</span>
@@ -405,7 +454,7 @@ mediante contenido visual profesional optimizado para redes sociales.
   <!-- PLAN 2: YUNQUE -->
   <div class="plan-card" onclick="abrirPlan('plan-yunque')">
     <div class="plan-imagen">
-      <img src="https://picsum.photos/600/400?anvil" alt="Plan Yunque">
+      <img src="imagen/yunque.jpeg" alt="Plan Yunque">
     </div>
     <div class="plan-header plan-yunque-color">
       <span class="plan-etiqueta">Identidad</span>
@@ -421,7 +470,7 @@ mediante contenido visual profesional optimizado para redes sociales.
   <!-- PLAN 3: FORJADO -->
   <div class="plan-card destacado" onclick="abrirPlan('plan-forjado')">
     <div class="plan-imagen">
-      <img src="https://picsum.photos/600/400?forge" alt="Plan Forjado">
+      <img src="imagen/forjado.jpeg" alt="Plan Forjado">
     </div>
     <div class="plan-header plan-forjado-color">
       <span class="plan-badge-popular">MÁS POPULAR</span>
@@ -451,7 +500,271 @@ mediante contenido visual profesional optimizado para redes sociales.
     <button class="btn-ver-plan">Ver plan →</button>
   </div>
 
-</div><!-- fin planes-grid -->
+</div><!-- fin planes-grid audiovisual -->
+
+</div><!-- fin cat-audiovisual -->
+
+
+<!-- ============================================= -->
+<!-- CATEGORÍA: WEB -->
+<!-- ============================================= -->
+<div id="cat-web" class="promo-categoria">
+
+<div class="promo-cat-volver" onclick="volverSelector()">← Volver</div>
+<p class="promo-subtitulo">Soluciones digitales completas con hosting y dominio incluidos.</p>
+
+<div class="planes-grid">
+
+  <!-- PLAN WEB 1: CHISPA -->
+  <div class="plan-card" onclick="abrirPlan('plan-web-chispa')">
+    <div class="plan-imagen">
+      <img src="imagen/chispa.jpeg" alt="Landing Page">
+    </div>
+    <div class="plan-header plan-chispa-color">
+      <span class="plan-etiqueta">Presencia Web</span>
+      <h3 class="plan-nombre">Chispa</h3>
+      <p class="plan-precio">S/ 300 <span>/ único</span></p>
+    </div>
+    <div class="plan-preview"><p>Landing page profesional para empezar tu presencia digital.</p></div>
+    <button class="btn-ver-plan">Ver plan →</button>
+  </div>
+
+  <!-- PLAN WEB 2: YUNQUE -->
+  <div class="plan-card" onclick="abrirPlan('plan-web-yunque')">
+    <div class="plan-imagen">
+      <img src="imagen/yunque.jpeg" alt="Pagina Servicios">
+    </div>
+    <div class="plan-header plan-yunque-color">
+      <span class="plan-etiqueta">Funcional</span>
+      <h3 class="plan-nombre">Yunque</h3>
+      <p class="plan-precio">S/ 550 <span>/ único</span></p>
+    </div>
+    <div class="plan-preview"><p>Página de servicios con funciones en línea y base de datos.</p></div>
+    <button class="btn-ver-plan">Ver plan →</button>
+  </div>
+
+  <!-- PLAN WEB 3: FORJADO -->
+  <div class="plan-card destacado" onclick="abrirPlan('plan-web-forjado')">
+    <div class="plan-imagen">
+      <img src="imagen/forjado.jpeg" alt="Pagos en linea">
+    </div>
+    <div class="plan-header plan-forjado-color">
+      <span class="plan-badge-popular">MÁS POPULAR</span>
+      <span class="plan-etiqueta">E-Commerce</span>
+      <h3 class="plan-nombre">Forjado</h3>
+      <p class="plan-precio">S/ 900 <span>/ único</span></p>
+    </div>
+    <div class="plan-preview"><p>Página con pagos en línea integrados y base de datos completa.</p></div>
+    <button class="btn-ver-plan">Ver plan →</button>
+  </div>
+
+  <!-- PLAN WEB 4: FORGE -->
+  <div class="plan-card" onclick="abrirPlan('plan-web-forge')">
+    <div class="plan-imagen">
+      <img src="https://picsum.photos/600/400?ecosystem" alt="Ecosistema Digital">
+    </div>
+    <div class="plan-header plan-forge-color">
+      <span class="plan-etiqueta">Ecosistema</span>
+      <h3 class="plan-nombre">Forge</h3>
+      <p class="plan-precio">S/ 1200 <span>/ único</span></p>
+    </div>
+    <div class="plan-preview"><p>Ecosistema digital completo: compras, catálogos, reservas y manejo del sistema de tu negocio.</p></div>
+    <button class="btn-ver-plan">Ver plan →</button>
+  </div>
+
+</div><!-- fin planes-grid web -->
+
+<!-- DETALLE WEB CHISPA -->
+<div id="plan-web-chispa" class="plan-detalle">
+  <div class="plan-detalle-volver" onclick="volverPlanesWeb()">← Volver a Planes Web</div>
+  <div class="plan-detalle-hero plan-chispa-color">
+    <div class="plan-detalle-texto">
+      <span class="plan-etiqueta">Presencia Web</span>
+      <h2>Chispa Web</h2>
+      <p class="plan-detalle-precio">S/ 300 <span>pago único</span></p>
+      <p class="plan-detalle-desc">Tu primer paso en el mundo digital. Una landing page profesional, rápida y optimizada para convertir visitas en clientes.</p>
+    </div>
+    <div class="plan-detalle-img"><img src="imagen/chispa.jpeg" alt="Landing"></div>
+  </div>
+  <div class="plan-detalle-cuerpo">
+    <div class="plan-detalle-info">
+      <h4>¿Para quién es?</h4>
+      <p>Emprendedores y negocios nuevos que necesitan presencia web profesional de forma rápida y accesible.</p>
+      <h4>¿Qué incluye?</h4>
+      <p>Diseño personalizado de una página, secciones clave del negocio, formulario de contacto y optimización básica.</p>
+    </div>
+    <div class="plan-tabla-wrap">
+      <h4>Características del plan</h4>
+      <table class="plan-tabla">
+        <thead><tr><th>Característica</th><th>Chispa Web</th></tr></thead>
+        <tbody>
+          <tr><td>Tipo de sitio</td><td>Landing page</td></tr>
+          <tr><td>Hosting y dominio</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Base de datos</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Pagos en línea</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Integración de IA</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Vinculación sistémica</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Catálogo de productos</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Reservas en línea</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Actualizaciones</td><td>Básicas</td></tr>
+          <tr><td>Personalización</td><td>Estándar</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="comparar-wrap">
+    <button class="btn-comparar" onclick="abrirCompararWeb('web-chispa')">⇄ Comparar con otro plan</button>
+  </div>
+</div>
+
+<!-- DETALLE WEB YUNQUE -->
+<div id="plan-web-yunque" class="plan-detalle">
+  <div class="plan-detalle-volver" onclick="volverPlanesWeb()">← Volver a Planes Web</div>
+  <div class="plan-detalle-hero plan-yunque-color">
+    <div class="plan-detalle-texto">
+      <span class="plan-etiqueta">Funcional</span>
+      <h2>Yunque Web</h2>
+      <p class="plan-detalle-precio">S/ 550 <span>pago único</span></p>
+      <p class="plan-detalle-desc">Página de servicios completa con funciones en línea y base de datos. Ideal para negocios que necesitan gestionar información de clientes o servicios.</p>
+    </div>
+    <div class="plan-detalle-img"><img src="imagen/yunque.jpeg" alt="Servicios"></div>
+  </div>
+  <div class="plan-detalle-cuerpo">
+    <div class="plan-detalle-info">
+      <h4>¿Para quién es?</h4>
+      <p>Negocios que necesitan más que una vitrina: un sistema funcional con registro de clientes, servicios y consultas en línea.</p>
+      <h4>¿Qué incluye?</h4>
+      <p>Diseño multipage, base de datos básica, formularios funcionales, panel de administración básico y hosting incluido.</p>
+    </div>
+    <div class="plan-tabla-wrap">
+      <h4>Características del plan</h4>
+      <table class="plan-tabla">
+        <thead><tr><th>Característica</th><th>Yunque Web</th></tr></thead>
+        <tbody>
+          <tr><td>Tipo de sitio</td><td>Página de servicios</td></tr>
+          <tr><td>Hosting y dominio</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Base de datos</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Pagos en línea</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Integración de IA</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Vinculación sistémica</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Catálogo de productos</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Reservas en línea</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Actualizaciones</td><td>Incluidas</td></tr>
+          <tr><td>Personalización</td><td>Media</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="comparar-wrap">
+    <button class="btn-comparar" onclick="abrirCompararWeb('web-yunque')">⇄ Comparar con otro plan</button>
+  </div>
+</div>
+
+<!-- DETALLE WEB FORJADO -->
+<div id="plan-web-forjado" class="plan-detalle">
+  <div class="plan-detalle-volver" onclick="volverPlanesWeb()">← Volver a Planes Web</div>
+  <div class="plan-detalle-hero plan-forjado-color">
+    <div class="plan-detalle-texto">
+      <span class="plan-etiqueta">E-Commerce</span>
+      <h2>Forjado Web</h2>
+      <p class="plan-detalle-precio">S/ 900 <span>pago único</span></p>
+      <p class="plan-detalle-desc">Plataforma con pagos en línea integrados, base de datos completa e inteligencia artificial. Para negocios listos para vender y gestionar en digital.</p>
+    </div>
+    <div class="plan-detalle-img"><img src="imagen/forjado.jpeg" alt="E-Commerce"></div>
+  </div>
+  <div class="plan-detalle-cuerpo">
+    <div class="plan-detalle-info">
+      <h4>¿Para quién es?</h4>
+      <p>Negocios que quieren vender en línea, gestionar pagos y automatizar procesos con apoyo de inteligencia artificial.</p>
+      <h4>¿Qué incluye?</h4>
+      <p>Pasarela de pagos, base de datos avanzada, IA integrada para atención o recomendaciones, panel de administración completo.</p>
+    </div>
+    <div class="plan-tabla-wrap">
+      <h4>Características del plan</h4>
+      <table class="plan-tabla">
+        <thead><tr><th>Característica</th><th>Forjado Web</th></tr></thead>
+        <tbody>
+          <tr><td>Tipo de sitio</td><td>E-Commerce / pagos</td></tr>
+          <tr><td>Hosting y dominio</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Base de datos</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Pagos en línea</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Integración de IA</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Vinculación sistémica</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Catálogo de productos</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Reservas en línea</td><td class="no">✗ No incluido</td></tr>
+          <tr><td>Actualizaciones</td><td>Semanales automáticas</td></tr>
+          <tr><td>Personalización</td><td>Alta</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="comparar-wrap">
+    <button class="btn-comparar" onclick="abrirCompararWeb('web-forjado')">⇄ Comparar con otro plan</button>
+  </div>
+</div>
+
+<!-- DETALLE WEB FORGE -->
+<div id="plan-web-forge" class="plan-detalle">
+  <div class="plan-detalle-volver" onclick="volverPlanesWeb()">← Volver a Planes Web</div>
+  <div class="plan-detalle-hero plan-forge-color">
+    <div class="plan-detalle-texto">
+      <span class="plan-etiqueta">Ecosistema</span>
+      <h2>Forge Web</h2>
+      <p class="plan-detalle-precio">S/ 1200 <span>pago único</span></p>
+      <p class="plan-detalle-desc">El ecosistema digital completo de tu negocio. Compras en línea, catálogos con actualizaciones automáticas, reservas, IA avanzada y vinculación total con el sistema de tu negocio.</p>
+    </div>
+    <div class="plan-detalle-img"><img src="https://picsum.photos/700/500?digital" alt="Ecosistema"></div>
+  </div>
+  <div class="plan-detalle-cuerpo">
+    <div class="plan-detalle-info">
+      <h4>¿Para quién es?</h4>
+      <p>Negocios que quieren una solución 100% personalizada y conectada: desde la web hasta el sistema interno del negocio, todo sincronizado.</p>
+      <h4>¿Qué incluye?</h4>
+      <p>Todo lo anterior más vinculación sistémica directa, catálogos con actualizaciones automáticas semanales, reservas en línea y personalización directa según las necesidades del negocio.</p>
+    </div>
+    <div class="plan-tabla-wrap">
+      <h4>Características del plan</h4>
+      <table class="plan-tabla">
+        <thead><tr><th>Característica</th><th>Forge Web</th></tr></thead>
+        <tbody>
+          <tr><td>Tipo de sitio</td><td>Ecosistema digital</td></tr>
+          <tr><td>Hosting y dominio</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Base de datos</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Pagos en línea</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Integración de IA</td><td class="si">✓ Avanzada</td></tr>
+          <tr><td>Vinculación sistémica</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Catálogo de productos</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Reservas en línea</td><td class="si">✓ Incluido</td></tr>
+          <tr><td>Actualizaciones</td><td>Automáticas semanales</td></tr>
+          <tr><td>Personalización</td><td>Directa al negocio</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="comparar-wrap">
+    <button class="btn-comparar" onclick="abrirCompararWeb('web-forge')">⇄ Comparar con otro plan</button>
+  </div>
+</div>
+
+<!-- COMPARADOR WEB -->
+<div id="comparador-web-overlay" class="comparador-overlay" onclick="cerrarComparadorWeb()">
+  <div class="comparador-modal" onclick="event.stopPropagation()">
+    <div class="comparador-header">
+      <h3 id="comparador-web-titulo">Comparar planes Web</h3>
+      <span class="comparador-cerrar" onclick="cerrarComparadorWeb()">✕</span>
+    </div>
+    <div id="comparador-web-selector" class="comparador-selector">
+      <p>Selecciona el plan a comparar:</p>
+      <div id="comparador-web-opciones" class="comparador-opciones"></div>
+    </div>
+    <div id="comparador-web-tabla-wrap" class="comparador-tabla-wrap" style="display:none;">
+      <table class="plan-tabla comparador-tabla" id="comparador-web-tabla"></table>
+      <button class="btn-cambiar-plan" onclick="mostrarSelectorComparadorWeb()">Cambiar plan de comparación</button>
+    </div>
+  </div>
+</div>
+
+</div><!-- fin cat-web -->
 
 
 <!-- ============================================= -->
@@ -473,7 +786,7 @@ mediante contenido visual profesional optimizado para redes sociales.
       </p>
     </div>
     <div class="plan-detalle-img">
-      <img src="https://picsum.photos/700/500?spark2" alt="Plan Chispa">
+      <img src="imagen/chispa.jpeg" alt="Plan Chispa">
     </div>
   </div>
 
@@ -545,7 +858,7 @@ mediante contenido visual profesional optimizado para redes sociales.
       </p>
     </div>
     <div class="plan-detalle-img">
-      <img src="https://picsum.photos/700/500?anvil2" alt="Plan Yunque">
+      <img src="imagen/yunque.jpeg" alt="Plan Yunque">
     </div>
   </div>
 
@@ -615,7 +928,7 @@ mediante contenido visual profesional optimizado para redes sociales.
       </p>
     </div>
     <div class="plan-detalle-img">
-      <img src="https://picsum.photos/700/500?forge2" alt="Plan Forjado">
+      <img src="imagen/forjado.jpeg" alt="Plan Forjado">
     </div>
   </div>
 

@@ -201,26 +201,100 @@ window.addEventListener("scroll", mostrarElementos);
 /* ===================================================== */
 
 function abrirPlan(id){
-  document.getElementById('planes-grid') && (document.querySelector('.planes-grid').style.display = 'none');
-  document.querySelector('.planes-grid').style.display = 'none';
-  document.querySelectorAll('.plan-detalle').forEach(d => d.style.display = 'none');
-  document.getElementById(id).style.display = 'block';
-  document.querySelector('.promo-subtitulo').style.display = 'none';
+  var catWeb = document.getElementById('cat-web');
+  var catAudio = document.getElementById('cat-audiovisual');
+  var enWeb = catWeb && catWeb.style.display === 'block';
+  var catId = enWeb ? 'cat-web' : 'cat-audiovisual';
+  var cat = document.getElementById(catId);
+
+  var grid = cat.querySelector('.planes-grid');
+  var subtitulo = cat.querySelector('.promo-subtitulo');
+  var volverCat = cat.querySelector('.promo-cat-volver');
+
+  if(grid) grid.style.display = 'none';
+  if(subtitulo) subtitulo.style.display = 'none';
+  if(volverCat) volverCat.style.display = 'none';
+
+  cat.querySelectorAll('.plan-detalle').forEach(function(d){ d.style.display = 'none'; });
+
+  var detalle = document.getElementById(id);
+  if(detalle){
+    detalle.style.display = 'block';
+    var volverDetalle = detalle.querySelector('.plan-detalle-volver');
+    if(volverDetalle) volverDetalle.style.display = 'block';
+  }
+
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function volverPlanes(){
-  document.querySelectorAll('.plan-detalle').forEach(d => d.style.display = 'none');
-  document.querySelector('.planes-grid').style.display = 'grid';
-  document.querySelector('.promo-subtitulo').style.display = 'block';
+  var cat = document.getElementById('cat-audiovisual');
+  cat.querySelectorAll('.plan-detalle').forEach(function(d){ d.style.display = 'none'; });
+  var grid = cat.querySelector('.planes-grid');
+  var subtitulo = cat.querySelector('.promo-subtitulo');
+  var volverCat = cat.querySelector('.promo-cat-volver');
+  if(grid) grid.style.display = 'grid';
+  if(subtitulo) subtitulo.style.display = 'block';
+  if(volverCat) volverCat.style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function volverPlanesWeb(){
+  var cat = document.getElementById('cat-web');
+  cat.querySelectorAll('.plan-detalle').forEach(function(d){ d.style.display = 'none'; });
+  var grid = cat.querySelector('.planes-grid');
+  var subtitulo = cat.querySelector('.promo-subtitulo');
+  var volverCat = cat.querySelector('.promo-cat-volver');
+  if(grid) grid.style.display = 'grid';
+  if(subtitulo) subtitulo.style.display = 'block';
+  if(volverCat) volverCat.style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 /* ===================================================== */
-/* COMPARADOR DE PLANES */
+/* SELECTOR DE CATEGORÍA */
 /* ===================================================== */
 
-const datosPlanes = {
+function abrirCategoria(cat){
+  document.getElementById('promo-selector').style.display = 'none';
+  var otraIdea = document.querySelector('.promo-otra-idea');
+  if(otraIdea) otraIdea.style.display = 'none';
+  document.getElementById('cat-audiovisual').style.display = 'none';
+  document.getElementById('cat-web').style.display = 'none';
+  document.getElementById('cat-' + cat).style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function volverSelector(){
+  document.getElementById('cat-audiovisual').style.display = 'none';
+  document.getElementById('cat-web').style.display = 'none';
+  document.querySelectorAll('.plan-detalle').forEach(function(d){ d.style.display = 'none'; });
+  document.querySelectorAll('.planes-grid').forEach(function(g){ g.style.display = 'grid'; });
+  document.querySelectorAll('.promo-subtitulo').forEach(function(s){ s.style.display = 'block'; });
+  document.querySelectorAll('.promo-cat-volver').forEach(function(v){ v.style.display = 'block'; });
+  document.getElementById('promo-selector').style.display = 'grid';
+  var otraIdea = document.querySelector('.promo-otra-idea');
+  if(otraIdea) otraIdea.style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ===================================================== */
+/* MODAL OTRA IDEA */
+/* ===================================================== */
+
+function abrirOtraIdea(){
+  document.getElementById('modal-otra-idea').classList.add('activo');
+}
+
+function cerrarOtraIdea(){
+  document.getElementById('modal-otra-idea').classList.remove('activo');
+}
+
+/* ===================================================== */
+/* COMPARADOR AUDIOVISUAL */
+/* ===================================================== */
+
+var datosPlanes = {
   chispa: {
     nombre: 'Chispa',
     precio: 'S/ 300',
@@ -279,7 +353,7 @@ const datosPlanes = {
   }
 };
 
-const filas = [
+var filas = [
   ['Precio mensual','precio'],
   ['Publicaciones / semana','publicaciones'],
   ['Manejo de redes','redes'],
@@ -293,12 +367,11 @@ const filas = [
   ['Drone','drone']
 ];
 
-let planActual = '';
+var planActual = '';
 
 function abrirComparar(plan){
   planActual = plan;
-  const overlay = document.getElementById('comparador-overlay');
-  overlay.classList.add('activo');
+  document.getElementById('comparador-overlay').classList.add('activo');
   document.getElementById('comparador-titulo').textContent = 'Comparar ' + datosPlanes[plan].nombre + ' con...';
   mostrarSelectorComparador();
 }
@@ -306,13 +379,13 @@ function abrirComparar(plan){
 function mostrarSelectorComparador(){
   document.getElementById('comparador-selector').style.display = 'block';
   document.getElementById('comparador-tabla-wrap').style.display = 'none';
-  const opciones = document.getElementById('comparador-opciones');
+  var opciones = document.getElementById('comparador-opciones');
   opciones.innerHTML = '';
-  Object.keys(datosPlanes).forEach(key => {
+  Object.keys(datosPlanes).forEach(function(key){
     if(key === planActual) return;
-    const btn = document.createElement('button');
+    var btn = document.createElement('button');
     btn.textContent = datosPlanes[key].nombre + ' – ' + datosPlanes[key].precio;
-    btn.onclick = () => mostrarTablaComparativa(planActual, key);
+    btn.onclick = function(){ mostrarTablaComparativa(planActual, key); };
     opciones.appendChild(btn);
   });
 }
@@ -322,20 +395,21 @@ function mostrarTablaComparativa(planA, planB){
   document.getElementById('comparador-titulo').textContent =
     datosPlanes[planA].nombre + ' vs ' + datosPlanes[planB].nombre;
 
-  const wrap = document.getElementById('comparador-tabla-wrap');
-  const tabla = document.getElementById('comparador-tabla');
+  var wrap = document.getElementById('comparador-tabla-wrap');
+  var tabla = document.getElementById('comparador-tabla');
   wrap.style.display = 'block';
 
-  let html = '<thead><tr><th style="text-align:left;color:#aaa;padding:12px 16px;font-size:13px;">Característica</th>';
+  var html = '<thead><tr><th style="text-align:left;color:#aaa;padding:12px 16px;font-size:13px;">Característica</th>';
   html += '<th style="color:#fff;padding:12px 16px;">' + datosPlanes[planA].nombre + '</th>';
   html += '<th style="color:#fff;padding:12px 16px;">' + datosPlanes[planB].nombre + '</th>';
   html += '</tr></thead><tbody>';
 
-  filas.forEach(([label, key]) => {
-    const valA = datosPlanes[planA][key];
-    const valB = datosPlanes[planB][key];
-    const colorA = valA.startsWith('✓') ? '#4ade80' : valA === '✗' ? '#555' : '#ddd';
-    const colorB = valB.startsWith('✓') ? '#4ade80' : valB === '✗' ? '#555' : '#ddd';
+  filas.forEach(function(item){
+    var label = item[0], key = item[1];
+    var valA = datosPlanes[planA][key];
+    var valB = datosPlanes[planB][key];
+    var colorA = valA.charAt(0) === '✓' ? '#4ade80' : valA === '✗' ? '#555' : '#ddd';
+    var colorB = valB.charAt(0) === '✓' ? '#4ade80' : valB === '✗' ? '#555' : '#ddd';
     html += '<tr>';
     html += '<td style="text-align:left;color:#aaa;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,0.06);font-size:13px;">' + label + '</td>';
     html += '<td style="text-align:center;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,0.06);color:' + colorA + ';font-size:13px;font-weight:600;">' + valA + '</td>';
@@ -349,4 +423,106 @@ function mostrarTablaComparativa(planA, planB){
 
 function cerrarComparador(){
   document.getElementById('comparador-overlay').classList.remove('activo');
+}
+
+/* ===================================================== */
+/* COMPARADOR WEB */
+/* ===================================================== */
+
+var datosWeb = {
+  'web-chispa': {
+    nombre:'Chispa Web', precio:'S/ 300',
+    tipo:'Landing page', hosting:'✓', bd:'✗', pagos:'✗',
+    ia:'✗', vinculacion:'✗', catalogo:'✗', reservas:'✗',
+    actualizaciones:'Básicas', personalizacion:'Estándar'
+  },
+  'web-yunque': {
+    nombre:'Yunque Web', precio:'S/ 550',
+    tipo:'Página de servicios', hosting:'✓', bd:'✓', pagos:'✗',
+    ia:'✗', vinculacion:'✗', catalogo:'✗', reservas:'✗',
+    actualizaciones:'Incluidas', personalizacion:'Media'
+  },
+  'web-forjado': {
+    nombre:'Forjado Web', precio:'S/ 900',
+    tipo:'E-Commerce / pagos', hosting:'✓', bd:'✓', pagos:'✓',
+    ia:'✓ Incluida', vinculacion:'✗', catalogo:'✓', reservas:'✗',
+    actualizaciones:'Semanales automáticas', personalizacion:'Alta'
+  },
+  'web-forge': {
+    nombre:'Forge Web', precio:'S/ 1200',
+    tipo:'Ecosistema digital', hosting:'✓', bd:'✓', pagos:'✓',
+    ia:'✓ Avanzada', vinculacion:'✓', catalogo:'✓', reservas:'✓',
+    actualizaciones:'Automáticas semanales', personalizacion:'Directa al negocio'
+  }
+};
+
+var filasWeb = [
+  ['Precio','precio'],
+  ['Tipo de sitio','tipo'],
+  ['Hosting y dominio','hosting'],
+  ['Base de datos','bd'],
+  ['Pagos en línea','pagos'],
+  ['Integración de IA','ia'],
+  ['Vinculación sistémica','vinculacion'],
+  ['Catálogo','catalogo'],
+  ['Reservas en línea','reservas'],
+  ['Actualizaciones','actualizaciones'],
+  ['Personalización','personalizacion']
+];
+
+var planWebActual = '';
+
+function abrirCompararWeb(plan){
+  planWebActual = plan;
+  document.getElementById('comparador-web-overlay').classList.add('activo');
+  document.getElementById('comparador-web-titulo').textContent =
+    'Comparar ' + datosWeb[plan].nombre + ' con...';
+  mostrarSelectorComparadorWeb();
+}
+
+function mostrarSelectorComparadorWeb(){
+  document.getElementById('comparador-web-selector').style.display = 'block';
+  document.getElementById('comparador-web-tabla-wrap').style.display = 'none';
+  var opciones = document.getElementById('comparador-web-opciones');
+  opciones.innerHTML = '';
+  Object.keys(datosWeb).forEach(function(key){
+    if(key === planWebActual) return;
+    var btn = document.createElement('button');
+    btn.textContent = datosWeb[key].nombre + ' – ' + datosWeb[key].precio;
+    btn.onclick = function(){ mostrarTablaWeb(planWebActual, key); };
+    opciones.appendChild(btn);
+  });
+}
+
+function mostrarTablaWeb(planA, planB){
+  document.getElementById('comparador-web-selector').style.display = 'none';
+  document.getElementById('comparador-web-titulo').textContent =
+    datosWeb[planA].nombre + ' vs ' + datosWeb[planB].nombre;
+  var wrap = document.getElementById('comparador-web-tabla-wrap');
+  var tabla = document.getElementById('comparador-web-tabla');
+  wrap.style.display = 'block';
+
+  var html = '<thead><tr><th style="text-align:left;color:#aaa;padding:12px 16px;font-size:13px;">Característica</th>';
+  html += '<th style="color:#fff;padding:12px 16px;">' + datosWeb[planA].nombre + '</th>';
+  html += '<th style="color:#fff;padding:12px 16px;">' + datosWeb[planB].nombre + '</th></tr></thead><tbody>';
+
+  filasWeb.forEach(function(item){
+    var label = item[0], key = item[1];
+    var vA = datosWeb[planA][key];
+    var vB = datosWeb[planB][key];
+    var cA = vA.charAt(0) === '✓' ? '#4ade80' : vA === '✗' ? '#555' : '#ddd';
+    var cB = vB.charAt(0) === '✓' ? '#4ade80' : vB === '✗' ? '#555' : '#ddd';
+    html += '<tr>';
+    html += '<td style="text-align:left;color:#aaa;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,0.06);font-size:13px;">' + label + '</td>';
+    html += '<td style="text-align:center;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,0.06);color:' + cA + ';font-size:13px;font-weight:600;">' + vA + '</td>';
+    html += '<td style="text-align:center;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,0.06);color:' + cB + ';font-size:13px;font-weight:600;">' + vB + '</td>';
+    html += '</tr>';
+  });
+
+  html += '</tbody>';
+  tabla.innerHTML = html;
+}
+
+function cerrarComparadorWeb(){
+  document.getElementById('comparador-web-overlay').classList.remove('activo');
 }
