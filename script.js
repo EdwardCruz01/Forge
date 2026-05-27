@@ -215,7 +215,7 @@ function abrirPlan(id){
   if(subtitulo) subtitulo.style.display = 'none';
   if(volverCat) volverCat.style.display = 'none';
 
-  cat.querySelectorAll('.plan-detalle').forEach(function(d){ d.style.display = 'none'; });
+  document.querySelectorAll('.plan-detalle').forEach(function(d){ d.style.display = 'none'; });
 
   var detalle = document.getElementById(id);
   if(detalle){
