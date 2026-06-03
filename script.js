@@ -297,7 +297,7 @@ function cerrarOtraIdea(){
 var datosPlanes = {
   chispa: {
     nombre: 'Chispa',
-    precio: 'S/ 300',
+    precio: 'S/ 350',
     publicaciones: '3 × semana (2 flyers + 1 video)',
     redes: '✗',
     creativo: 'Básico',
@@ -311,7 +311,7 @@ var datosPlanes = {
   },
   yunque: {
     nombre: 'Yunque',
-    precio: 'S/ 500',
+    precio: 'S/ 550',
     publicaciones: '4 × semana (2 flyers + 2 videos)',
     redes: '✓ Básico',
     creativo: 'Medio',
@@ -325,7 +325,7 @@ var datosPlanes = {
   },
   forjado: {
     nombre: 'Forjado',
-    precio: 'S/ 900',
+    precio: 'S/ 1000',
     publicaciones: '7 × semana (4 flyers + 3 videos)',
     redes: '✓ Completo',
     creativo: 'Alto',
@@ -339,7 +339,7 @@ var datosPlanes = {
   },
   forge: {
     nombre: 'Forge',
-    precio: 'S/ 1299',
+    precio: 'S/ 1500',
     publicaciones: '10 × semana (a elección)',
     redes: '✓ Completo',
     creativo: 'Alto valor',
@@ -443,13 +443,13 @@ var datosWeb = {
     actualizaciones:'Incluidas', personalizacion:'Media'
   },
   'web-forjado': {
-    nombre:'Forjado Web', precio:'S/ 900',
+    nombre:'Forjado Web', precio:'S/ 1000',
     tipo:'E-Commerce / pagos', hosting:'✓', bd:'✓', pagos:'✓',
     ia:'✓ Incluida', vinculacion:'✗', catalogo:'✓', reservas:'✗',
     actualizaciones:'Semanales automáticas', personalizacion:'Alta'
   },
   'web-forge': {
-    nombre:'Forge Web', precio:'S/ 1200',
+    nombre:'Forge Web', precio:'S/ 1500',
     tipo:'Ecosistema digital', hosting:'✓', bd:'✓', pagos:'✓',
     ia:'✓ Avanzada', vinculacion:'✓', catalogo:'✓', reservas:'✓',
     actualizaciones:'Automáticas semanales', personalizacion:'Directa al negocio'
