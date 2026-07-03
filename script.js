@@ -526,3 +526,46 @@ function mostrarTablaWeb(planA, planB){
 function cerrarComparadorWeb(){
   document.getElementById('comparador-web-overlay').classList.remove('activo');
 }
+
+/* ===================================================== */
+/* VISOR DE PROYECTOS */
+/* ===================================================== */
+
+function abrirGaleriaProyecto(img){
+  var carrusel = img.closest('.proyecto-carrusel');
+  var imagenes = carrusel ? carrusel.querySelectorAll('img') : [img];
+  var visor = document.getElementById('visor-proyecto');
+  var imagenGrande = document.getElementById('visor-proyecto-img');
+  var miniaturas = document.getElementById('visor-proyecto-miniaturas');
+
+  miniaturas.innerHTML = '';
+
+  imagenes.forEach(function(item){
+    var miniatura = document.createElement('img');
+    miniatura.src = item.src;
+    miniatura.alt = item.alt;
+
+    if(item.src === img.src){
+      miniatura.classList.add('activa');
+      imagenGrande.src = item.src;
+      imagenGrande.alt = item.alt;
+    }
+
+    miniatura.onclick = function(){
+      imagenGrande.src = item.src;
+      imagenGrande.alt = item.alt;
+      miniaturas.querySelectorAll('img').forEach(function(el){
+        el.classList.remove('activa');
+      });
+      miniatura.classList.add('activa');
+    };
+
+    miniaturas.appendChild(miniatura);
+  });
+
+  visor.classList.add('activo');
+}
+
+function cerrarGaleriaProyecto(){
+  document.getElementById('visor-proyecto').classList.remove('activo');
+}

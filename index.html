@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -350,23 +350,100 @@ avanzado de cámara.
 
 <article class="proyecto-card">
 
-<img src="imagen/aurastore01.png" alt="Produccion Audiovisual">
+<div class="proyecto-carrusel">
+<img src="imagen/proyectos/copa yolu 1.JPG" alt="Copa Yolu campeonato local" onclick="abrirGaleriaProyecto(this)">
+<img src="imagen/proyectos/copa yolu2.JPG" alt="Copa Yolu campeonato local" onclick="abrirGaleriaProyecto(this)">
+<img src="imagen/proyectos/copa yolu 3.JPG" alt="Copa Yolu campeonato local" onclick="abrirGaleriaProyecto(this)">
+</div>
 
 <div class="proyecto-info">
 
-<h3>Campaña Audiovisual – Marca Local Huanuqueña</h3>
+<h3>Copa Yolu &ndash; Campeonato Local</h3>
 
 <p>
-Desarrollo de una campaña audiovisual para una marca local de Huánuco, 
-incluyendo concepto creativo, producción de video promocional y fotografía 
-publicitaria. El objetivo fue fortalecer la presencia digital de la marca 
-mediante contenido visual profesional optimizado para redes sociales.
+Registro audiovisual de un campeonato local con enfoque en la energia del evento,
+la participacion de los equipos y los momentos clave de la competencia. El material
+fue pensado para redes sociales, difusion deportiva y recordacion de marca.
 </p>
 
 </div>
-<h2>PROXIMAMENTE..... </h2>
 </article>
 
+
+
+<!-- PROYECTO 4 -->
+
+<article class="proyecto-card">
+
+<div class="proyecto-carrusel">
+<img src="imagen/proyectos/corazon serrano 1.JPG" alt="Corazon Serrano presentacion" onclick="abrirGaleriaProyecto(this)">
+<img src="imagen/proyectos/corazon serrano2.JPG" alt="Corazon Serrano presentacion" onclick="abrirGaleriaProyecto(this)">
+<img src="imagen/proyectos/corazon serrano 3.JPG" alt="Corazon Serrano presentacion" onclick="abrirGaleriaProyecto(this)">
+</div>
+
+<div class="proyecto-info">
+
+<h3>Corazon Serrano &ndash; Presentacion Artistica</h3>
+
+<p>
+Cobertura audiovisual de una presentacion de Corazon Serrano, agrupacion
+peruana reconocida por su trayectoria en la cumbia. Se priorizo capturar el ambiente,
+la conexion con el publico y la fuerza visual del show en vivo.
+</p>
+
+</div>
+
+</article>
+
+
+<!-- PROYECTO 5 -->
+
+<article class="proyecto-card">
+
+<div class="proyecto-carrusel">
+<img src="imagen/proyectos/miss petie.JPG" alt="Miss Petie concurso de belleza" onclick="abrirGaleriaProyecto(this)">
+<img src="imagen/proyectos/miss petie 2.JPG" alt="Miss Petie concurso de belleza" onclick="abrirGaleriaProyecto(this)">
+<img src="imagen/proyectos/miss petie 3.JPG" alt="Miss Petie concurso de belleza" onclick="abrirGaleriaProyecto(this)">
+</div>
+
+<div class="proyecto-info">
+
+<h3>Miss Petie &ndash; Concurso de Belleza Adolescente</h3>
+
+<p>
+Produccion visual para un concurso de belleza adolescente, cuidando la elegancia
+del escenario, la presentacion de las participantes y los momentos principales del
+evento. El contenido fue orientado a difusion social y archivo promocional.
+</p>
+
+</div>
+
+</article>
+
+
+<!-- PROYECTO 6 -->
+
+<article class="proyecto-card">
+
+<div class="proyecto-carrusel">
+<img src="imagen/proyectos/Dina 1.JPG" alt="Dina Paucar presentacion" onclick="abrirGaleriaProyecto(this)">
+<img src="imagen/proyectos/dina 2.JPG" alt="Dina Paucar presentacion" onclick="abrirGaleriaProyecto(this)">
+<img src="imagen/proyectos/dina3.JPG" alt="Dina Paucar presentacion" onclick="abrirGaleriaProyecto(this)">
+</div>
+
+<div class="proyecto-info">
+
+<h3>Dina Paucar &ndash; Presentacion Folclorica</h3>
+
+<p>
+Registro audiovisual de una presentacion de Dina Paucar, cantante peruana
+referente de la musica andina y folclorica. La cobertura resalto la expresividad
+del escenario, la identidad cultural y la cercania de la artista con su publico.
+</p>
+
+</div>
+
+</article>
 
 </div>
 
@@ -1196,6 +1273,14 @@ WhatsApp
 </div>
 
 </footer>
+
+<div id="visor-proyecto" class="visor-proyecto" onclick="cerrarGaleriaProyecto()">
+<div class="visor-proyecto-contenido" onclick="event.stopPropagation()">
+<button class="visor-proyecto-cerrar" onclick="cerrarGaleriaProyecto()">×</button>
+<img id="visor-proyecto-img" src="" alt="Imagen de proyecto">
+<div id="visor-proyecto-miniaturas" class="visor-proyecto-miniaturas"></div>
+</div>
+</div>
 
 <script src="script.js"></script>
 </body>
